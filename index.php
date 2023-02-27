@@ -1,32 +1,47 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Login Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <style>
-    .all {
-      width: 30%;
-      margin: auto;
-      margin-top: 250px;
-    }
-  </style>
-  </head>
-  <body>
-    <div class="all">
-      <div class="container mt-5">
-        <h1 class="text-center">Login</h1>
-        <form action="/" method="post" class="form-group">
-          <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" class="form-control">
-          </div>
-          <input type="submit" value="Submit" class="btn btn-primary btn-block">
-        </form> 
-      </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="Assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="landing">
+<button class="signup">Sign Up</button>
+<button class="login">Log in </button>
     </div>
-  </body>
+    <div class="loginForm dp-none">
+    <h1>Login</h1>
+<form method="GET" action = "index.php" >
+    <div class="i i1">
+    <label for="email">Email</label>
+<input type="email" name="email" id="email">
+
+    </div>
+    <div class="i i2">
+    <label for="password">Password</label>
+
+    <input type="password" name="password" id="password" required>
+    </div>
+<input type="submit" value="submit" class="submit">
+</form>
+        <button class="x">X</button>
+    </div>
+</body>
+<script>
+$(".login").on("click",function(){
+    $(".loginForm").css("display","block");
+    $(".landing").css("display","none");
+});
+$(".x").on("click",function(){
+    $(".loginForm").css("display","none");
+    $(".landing").css("display","flex");
+});
+</script>
 </html>
