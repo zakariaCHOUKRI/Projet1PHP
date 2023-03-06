@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +13,10 @@
     <title>Document</title>
 </head>
 <body>
-    This is an employee page.
+<?php 
+    $empId = $_SESSION['empId'];
+    echo "Employee Id : ".$empId;
+
+?>
 </body>
 </html>
