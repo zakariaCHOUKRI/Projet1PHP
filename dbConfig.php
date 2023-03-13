@@ -7,7 +7,7 @@
 <?php
         //$myAction = "";
         $username = "root";
-        $password = "12345";
+        $password = "1234";
         $hostname = "localhost";
         //connection to the database
         //$dbConnect = mysqli_connect($hostname, $username, $password);
@@ -30,13 +30,19 @@
           
           if (isset($_POST['username']) && !empty($_POST['username'])){
             $empUsername = $_POST['username'];
+            
             try{
               $empPass = $conn->query("SELECT passcode FROM employees WHERE emp_no = $empUsername")->fetchAll(PDO::FETCH_ASSOC)[0]['passcode'];
               $empPassEntered = $_POST['password'];
               $_SESSION['empId'] = $empUsername;
+              echo $empPass;
+              echo $empPassEntered;
+              echo "<br>";
+              echo $empPass == $empPassEntered;
               
               if ($empPass == $empPassEntered){
                 $changed = $conn->query("SELECT is_changed FROM employees WHERE emp_no = $empUsername")->fetchAll(PDO::FETCH_ASSOC)[0]['is_changed'];
+                echo $empPass;
                 if ($changed == 0){
                     header("Location: updatePassword.php");
                 }
