@@ -10,7 +10,7 @@
 <body>
     <div class="sidebar">
 <a href="#">Main</a>
-<a href="change_employee.php">Add Employee</a>
+<a href="add_employee.php">Add Employee</a>
 <a href="">Change Employee Data</a>
     </div>
     <div class="main_data">
