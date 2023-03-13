@@ -84,7 +84,11 @@ span{
                         $myQuery2 = "UPDATE employees SET is_changed = 1 WHERE emp_no = ".$_SESSION["empId"];
                         $conn->query($myQuery1);
                         $conn->query($myQuery2);
-                        header("Location: employeeDashboard.php");
+                        if ($_SESSION["empId"] != 10001) {
+						header("Location: employeeDashboard.php");
+						} else {
+							header("Location: admin.php");
+						}
                     }
                     else{
                         echo "Passwords do not match !";

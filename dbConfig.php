@@ -7,7 +7,7 @@
 <?php
         //$myAction = "";
         $username = "root";
-        $password = "1234";
+        $password = "";
         $hostname = "localhost";
         //connection to the database
         //$dbConnect = mysqli_connect($hostname, $username, $password);
@@ -47,9 +47,16 @@
                     header("Location: updatePassword.php");
                 }
                 else{
+                  if ($empUsername != 10001) {
                     header("Location: employeeDashboard.php");
+                    } else {
+                      header("Location: admin.php");
+                    }
                 }
 
+              } 
+              else {
+                header("Location: index.php?fail=true");
               }
             }
             catch(PDOException $e){

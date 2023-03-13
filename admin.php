@@ -17,7 +17,7 @@
     </div>
     <?php
      $username = "root";
-     $password = "1234";
+     $password = "";
      $hostname = "localhost";
      try{
         $conn = new PDO("mysql:host=".$hostname.";dbname=employees", $username, $password);
